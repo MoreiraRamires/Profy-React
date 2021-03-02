@@ -6,6 +6,7 @@ import './styles.css'
 
 interface PageHeaderProps {
   title:string;
+  description?:string; // opcional ?:
 
 }
 
@@ -22,6 +23,8 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
 
         <div className="header-content">
           <strong>{props.title}</strong>
+          {props.description && <p>{props.description}</p>} 
+          {/* a segunda proposicao so vai aparecer se a primeira for vdd */}
         {props.children}
         </div>
       </header>
